@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "books-event-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,0 +1,405 @@
+<!--
+ Copyright 2016 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Event PWA">
+  <link rel="apple-touch-icon" href="images/icons/Icon-196.png">
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://rbeventsupport.firebaseapp.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+  <!-- manifest  -->
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__title">Books Event</h1>
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButton" aria-label="Add"></button>
+    <button id="butScanner" class="headerButton" aria-label="Scan"></button>
+  </header>
+
+  <main class="main">
+    <div class="card weather-forecast">
+      <font size="5" face="fantasy:SHERLOCK" color="#1d781a">Meet and greet</font>
+
+      <!--Pie chat-->
+
+      <div id="piechart">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+          // Load google charts
+          google.charts.load('current', { 'packages': ['corechart'] });
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Draw the chart and set the chart values
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['People Number', 'count'],
+              ['Man', 20],
+              ['Woman', 10],
+              ['Not arrive yet ', 50]
+
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'Attendee situation ', 'width': 300, 'height': 300 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+          }
+        </script>
+      </div>
+    </div>
+    <div class="card weather-forecast2 " hidden>
+      <font size="5" face="fantasy:SHERLOCK" color="#1d781a">One up!!!</font>
+
+      <!--Pie chat-->
+
+      <div id="piechart2">
+
+        <script type="text/javascript">
+          // Load google charts
+          google.charts.load('current', { 'packages': ['corechart'] });
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Draw the chart and set the chart values
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['People Number', 'count'],
+              ['TeamA', 20],
+              ['TemmB', 10],
+              ['TeamA Not  yet', 50],
+              ['Teamb Not  yet', 50]
+
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'Attendee situation ', 'width': 300, 'height': 300 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+            chart.draw(data, options);
+          }
+        </script>
+      </div>
+    </div>
+    <div class="card weather-forecast3" hidden>
+      <font size="5" face="fantasy:SHERLOCK" color="#1d781a">MiniLive</font>
+
+      <!--Pie chat-->
+
+      <div id="piechart3">
+
+        <script type="text/javascript">
+          // Load google charts
+          google.charts.load('current', { 'packages': ['corechart'] });
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Draw the chart and set the chart values
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['People Number', 'count'],
+              ['Man', 5],
+              ['Woman', 50],
+              ['Not arrive yet', 20]
+
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'Attendee situation ', 'width': 300, 'height': 300 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+            chart.draw(data, options);
+          }
+        </script>
+      </div>
+    </div>
+    <div class="card weather-forecast4" hidden>
+      <font size="5" face="fantasy:SHERLOCK" color="#1d781a">Handshake</font>
+
+      <!--Pie chat-->
+
+      <div id="piechart4">
+
+        <script type="text/javascript">
+          // Load google charts
+          google.charts.load('current', { 'packages': ['corechart'] });
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Draw the chart and set the chart values
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['People Number', 'count'],
+              ['Man', 10],
+              ['Woman', 10],
+              ['Not arrive yet ', 50]
+
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'Attendee situation ', 'width': 300, 'height': 300 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
+            chart.draw(data, options);
+          }
+        </script>
+      </div>
+    </div>
+    <div class="menu bar"></div>
+
+    <div class="card cardTemplate weather-forecast" hidden>
+      <div class="city-key" hidden></div>
+      <div class="card-last-updated" hidden></div>
+      <div class="location"></div>
+      <div class="date"></div>
+      <div class="description"></div>
+      <div class="current">
+        <div class="visual">
+          <div class="icon"></div>
+          <div class="temperature">
+            <span class="value"></span><span class="scale">°F</span>
+          </div>
+        </div>
+        <div class="description">
+          <div class="humidity"></div>
+          <div class="wind">
+            <span class="value"></span>
+            <span class="scale">mph</span>
+            <span class="direction"></span>°
+          </div>
+          <div class="sunrise"></div>
+          <div class="sunset"></div>
+        </div>
+      </div>
+      <div class="future">
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--POP up dialogs-->
+  <div class="scanner-container">
+    <div class="scanner">
+      <div class="scanner-title">Please scan QR code on your ticket</div>
+      <!--sanner-->
+      <script src="./scripts/jsQR.js"></script>
+      <div class="scanner-body">
+        <div id="loadingMessage">Unable to access video stream (please make sure you have a webcam enabled)</div>
+        <canvas id="canvas" hidden class="scanner-canvas"></canvas>
+        <div id="output" hidden>
+          <div id="outputMessage">No QR code detected.</div>
+          <div hidden><b>Data:</b> <span id="outputData"></span></div>
+        </div>
+        <script>
+          var video = document.createElement("video");
+          var canvasElement = document.getElementById("canvas");
+          var canvas = canvasElement.getContext("2d");
+          var loadingMessage = document.getElementById("loadingMessage");
+          var outputContainer = document.getElementById("output");
+          var outputMessage = document.getElementById("outputMessage");
+          var outputData = document.getElementById("outputData");
+
+
+          function drawLine(begin, end, color) {
+            canvas.beginPath();
+            canvas.moveTo(begin.x, begin.y);
+            canvas.lineTo(end.x, end.y);
+            canvas.lineWidth = 4;
+            canvas.strokeStyle = color;
+            canvas.stroke();
+          }
+
+          // Use facingMode: environment to attemt to get the front camera on phones
+          navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function (stream) {
+            video.srcObject = stream;
+            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.play();
+            requestAnimationFrame(tick);
+          });
+
+          function tick() {
+            loadingMessage.innerText = "Loading video..."
+            if (video.readyState === video.HAVE_ENOUGH_DATA) {
+              loadingMessage.hidden = true;
+              canvasElement.hidden = false;
+              outputContainer.hidden = false;
+
+              canvasElement.height = video.videoHeight;
+              canvasElement.width = video.videoWidth;
+              canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+              var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+              var code = jsQR(imageData.data, imageData.width, imageData.height, {
+                inversionAttempts: "dontInvert",
+              });
+              if (code) {
+                drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+                drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+                drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+                drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+                outputMessage.hidden = true;
+                outputData.parentElement.hidden = false;
+                document.getElementById("butAddScanner").hidden = false;
+                outputData.innerText = code.data;
+              } else {
+                outputMessage.hidden = false;
+                outputData.parentElement.hidden = true;
+                document.getElementById("butAddScanner").hidden = true;
+              }
+            }
+            requestAnimationFrame(tick);
+          }
+        </script>
+        <!--sannner codes-->
+        <div class="scanner-buttons">
+          <button id="butAddScanner" class="button" hidden>Acceptance</button>
+          <button id="butAddScannerCancel" class="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog-container">
+    <div class="dialog">
+      <div class="dialog-title">Other event chart</div>
+      <div class="dialog-body">
+        <select id="selectCityToAdd">
+          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
+               https://developer.yahoo.com/weather/documentation.html#req -->
+          <option value="2357536">One up!!!</option>
+          <option value="2367105">MiniLive</option>
+          <option value="2379574">Handshake</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddCity" class="button">Add</button>
+        <button id="butAddCityCancel" class="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <!--Setting for noticafication-->
+  <!--
+  <button onclick="requestPermission()">Request Permission</button>
+  <script src="/__/firebase/4.6.2/firebase-app.js"></script>
+  <script src="/__/firebase/4.6.2/firebase-messaging.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="./scripts/push.js"></script>
+-->
+  <!--sanner-->
+  <script src="./scripts/jsQR.js"></script>
+  <script>
+    //const code = jsQR(imageData, width, height);
+  </script>
+</body>
+
+<!--Other function-->
+<!-- Uncomment the line below when ready to test with fake data -->
+<script src="./scripts/app.js" async></script>
+
+
+</html>

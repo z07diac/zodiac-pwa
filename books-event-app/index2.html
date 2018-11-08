@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>QRCODE</title>
+  <script type="text/javascript" src="lib/grid.js"></script>
+  <script type="text/javascript" src="lib/version.js"></script>
+  <script type="text/javascript" src="lib/detector.js"></script>
+  <script type="text/javascript" src="lib/formatinf.js"></script>
+  <script type="text/javascript" src="lib/errorlevel.js"></script>
+  <script type="text/javascript" src="lib/bitmat.js"></script>
+  <script type="text/javascript" src="lib/datablock.js"></script>
+  <script type="text/javascript" src="lib/bmparser.js"></script>
+  <script type="text/javascript" src="lib/datamask.js"></script>
+  <script type="text/javascript" src="lib/rsdecoder.js"></script>
+  <script type="text/javascript" src="lib/gf256poly.js"></script>
+  <script type="text/javascript" src="lib/gf256.js"></script>
+  <script type="text/javascript" src="lib/decoder.js"></script>
+  <script type="text/javascript" src="lib/qrcode.js"></script>
+  <script type="text/javascript" src="lib/findpat.js"></script>
+  <script type="text/javascript" src="lib/alignpat.js"></script>
+  <script type="text/javascript" src="lib/databr.js"></script>
+  <script type="text/javascript">
+
+    //
+    function init() {
+
+      //コールバックの指定
+      qrcode.callback = read;
+
+      //QRコードの解析
+      qrcode.decode(document.getElementById("qrImage").src);
+
+    }
+
+    //コールバック
+    function read(result) {
+      alert(result);
+    }
+
+  </script>
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <p><img id="qrImage" src="qr.gif" /></p>
+  <button onclick="init()">解析</button>
+</body>
+
+</html>
